@@ -1,6 +1,9 @@
 <% if notice %>
 <p id="notice"><%= notice %></p>
 <%end%>
+
+<%= render @cart %>
+
 <!--
 <h2>Your Pragmatic Cart</h2>
 <ul>
@@ -12,6 +15,8 @@
     data: {confirm: 'Are you sure?'} %>
 -->
 
+<!-- replace below using render
+
 <h2>Your Cart</h2>
 <table>
  <% @cart.line_items.each do |item| %>
@@ -21,6 +26,8 @@
    <td class="item_price"><%= number_to_currency(item.total_price) %></td>
   </tr>
  <%end%>
+ 
+ <%= render(@cart.line_items) %>
 
  <tr class="total_line">
   <td colspan="2">Total</td>
@@ -30,3 +37,4 @@
 
 <%= button_to 'Empty cart', @cart, method: :delete,
     data: { confirm: 'Are you sure?' } %>
+-->
